@@ -1,0 +1,16 @@
+div.nav-bar {
+    display: flex;
+    background-color: aquamarine;
+}
+
+ul {
+	display: flex;
+	justify-content: flex-start;
+}
+
+li {
+	list-style-type: none;
+	padding: 10px;
+    text-decoration: none;
+    color: black;
+}
