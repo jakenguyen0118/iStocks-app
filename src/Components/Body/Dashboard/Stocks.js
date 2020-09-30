@@ -2,7 +2,8 @@ import React from 'react'
 
 const Stocks = props => {
     console.log(props)
-    const company = props.stocksData.filter(stock => stock.name === props.match.params.name)[0]
+    const company = props.stocksData.filter(stock => stock.name === props.match.params.name)
+    console.log(company)
 
     return (
         <div>

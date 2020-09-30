@@ -8,7 +8,7 @@ const Dashboard = props => {
         return (
             <Link
                 key={index}
-                to={'/price/' + stock.name}>
+                to={`/price/${stock.name}`}>
                     <div>{stock.name}</div>
             </Link>
         )
