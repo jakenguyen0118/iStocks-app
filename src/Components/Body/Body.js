@@ -3,8 +3,8 @@ import {Route, Switch} from 'react-router-dom'
 import stocks from '../../stocksData'
 import Home from './Home'
 import About from './About'
-import Dashboard from './Dashboard/Dashboard'
-import Stocks from './Dashboard/Stocks'
+import Dashboard from './Dashboard'
+import Stocks from './Stocks'
 
 
 const Body = () => {
@@ -15,15 +15,19 @@ const Body = () => {
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route path='/about' component={About} />
-                <Route path='/stocks'
-                    render={props => <Dashboard {...props} stocksData={stocks}/>}
+                <Route
+                    path='/stocks/:symbol'
+                    render={(routerProps) => (
+                        <Stocks stocksData={stocks} match={routerProps.match} />
+                    )}
                 />
-                <Route path='/stocks/:name'
-                    render={props => <Stocks stocksData={stocks} {...props}/>}
+                <Route
+                    path='/stocks'
+                    render={(props) => <Dashboard {...props} stocksData={stocks} />}
                 />
             </Switch>
         </div>
-    )
+		)
 }
 
 export default Body
